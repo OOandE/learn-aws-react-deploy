@@ -22,6 +22,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set up environment variables
+        # Add the REACT_APP_BASE_URL to .env.production
+        run: echo "REACT_APP_BASE_URL=${{ secrets.REACT_APP_BASE_URL }}" >> .env.production
+
       - name: Build app
         run: npm run build
 
