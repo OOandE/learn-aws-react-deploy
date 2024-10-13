@@ -1,0 +1,23 @@
+.card {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+
+  &__edit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: var(--black);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+
+    &-icon {
+      margin-left: 10px;
+      fill: var(--black);
+    }
+  }
+}

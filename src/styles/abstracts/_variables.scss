@@ -1,0 +1,93 @@
+//Variables
+
+// Colors
+:root {
+  --primary: #303984;
+  --primary-text: #303984;
+  --primary-light: #e6edff;
+  --secondary: #9c2e87;
+  --main-background: #f9f9f9;
+  --main-background-dark: #25313b;
+  --sidebar-background: #ffffff;
+  --sidebar-background-dark: #000b14;
+  --sidebar-active: #303984;
+  --black: #000b14;
+  --white: #ffffff;
+  --text: #515151;
+  --gray: #a2a9ad;
+  --off-white: #f5f5f5;
+  --success: #3bad54;
+  --success-light: #ebf7ee;
+  --pending: #f79f1a;
+  --pending-light: #fef1dd;
+  --pending2: #543303;
+  --danger: #eb5757;
+  --f-blue: #005397;
+  --f-blue-light: #f5fbff;
+  --f-lime: #e7f9a9;
+  --f-green: #9a9b73;
+  --stroke-alt: rgba(211, 211, 211, 0.4);
+  --dropshadow: 0px 0px 10px rgba(0, 11, 20, 0.04);
+  --borderinput: 1px solid var(--stroke-alt);
+  --borderline: 1px solid var(--off-white);
+  --radius-c: 50%;
+  --radius-10: 10px;
+  --preferredradius: 8px;
+  --opacity01: 0.1;
+}
+
+[data-theme="dark"] {
+  --primary: #9c2e87;
+  --primary-text: #9db4f3;
+  --primary-light: #e6edff;
+  --secondary: #303984;
+  --main-background: #25313b;
+  --sidebar-background: #000b14;
+  --sidebar-active: #9c2e87;
+  --black: #f5f5f5;
+  --white: #000b14;
+  --text: #adadad;
+  --gray: #f5f5f5;
+  --off-white: #f5f5f5;
+  --success: #3bad54;
+  --success-light: #ebf7ee;
+  --pending: #f79f1a;
+  --pending-light: #fef1dd;
+  --pending2: #543303;
+  --danger: #eb5757;
+  --f-blue: #005397;
+  --f-blue-light: #f5fbff;
+  --f-lime: #e7f9a9;
+  --f-green: #9a9b73;
+  --stroke-alt: rgba(211, 211, 211, 0.4);
+  --dropshadow: 0px 0px 10px rgba(0, 11, 20, 0.04);
+  --borderinput: 1px solid var(--stroke-alt);
+  --borderline: 1px solid var(--off-white);
+  --radius-c: 50%;
+  --radius-10: 10px;
+  --preferredradius: 8px;
+  --opacity01: 0.6;
+}
+
+//RADIUS
+$preferredradius: 8px;
+$radius-c: 50%;
+$radius-10: 10px;
+
+// MEDIA QUERIES
+$xxsmallup: "only screen and (min-width: 312px)";
+$xxsmalldown: "only screen and (max-width: 320px)";
+$xsmallup: "only screen and (min-width: 368px)";
+$xsmalldown: "only screen and (max-width: 368px)";
+$xs-md-up: "only screen and (min-width: 480px)";
+$xs-md-down: "only screen and (max-width: 480px)";
+$smallup: "only screen and (min-width: 576px)";
+$smalldown: "only screen and (max-width: 575.98px)";
+$mediumup: "only screen and (min-width: 768px)";
+$mediumdown: "only screen and (max-width: 767.98px)";
+$largeup: "only screen and (min-width: 992px)";
+$largedown: "only screen and (max-width: 991.98px)";
+$slaptop: "only screen and (min-width: 1200px)";
+$slaptopdown: "only screen and (max-width: 1200px)";
+$xlargeup: "only screen and (min-width: 1199.98px)";
+$xxlargeup: "only screen and (min-width: 1440px)";

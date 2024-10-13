@@ -1,0 +1,76 @@
+//TEXT
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+h1 {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 44px;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+h4 {
+  font-size: 26px;
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.tx-c {
+  text-align: center;
+}
+
+.tx-r {
+  text-align: right;
+}
+
+.tx-medium {
+  font-weight: 500;
+}
+
+.underline {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.uppercase,
+.caps {
+  text-transform: uppercase;
+}
+
+.section--header {
+  position: relative;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 22px;
+}
+
+.section--subheader {
+  position: relative;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #5c6368;
+}

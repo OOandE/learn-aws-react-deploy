@@ -1,0 +1,35 @@
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px; /* The tabs container starts with a small size */
+  width: fit-content; /* Adjust width based on content */
+}
+
+.tabs {
+  display: flex;
+  position: relative; /* Needed for the indicator */
+}
+
+.tab {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.tab-indicator {
+  height: 4px;
+  position: relative;
+  margin-top: 5px;
+}
+
+.indicator {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.tab-content {
+  margin-top: 20px;
+}

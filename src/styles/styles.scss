@@ -1,0 +1,45 @@
+//abstracts
+@import "abstracts/variables";
+@import "abstracts/base";
+@import "abstracts/colors";
+@import "abstracts/text";
+@import "abstracts/form";
+
+//Components
+@import "components/inputs";
+@import "components/cards";
+@import "components/button";
+@import "components/tables";
+@import "components/modal";
+@import "components/emptyState";
+@import "components/loader";
+@import "components/toggle";
+@import "components/tab";
+@import "components/filter";
+
+//Layout
+@import "layouts/navigation";
+@import "layouts/dashboardLayout";
+@import "layouts/sidenav";
+
+//Pages
+@import "pages/user";
+@import "pages/dashboard";
+@import "pages/template";
+
+#nprogress {
+  .bar {
+    background: #ff8788 !important;
+  }
+
+  .spinner-icon {
+    border-top-color: #ff8788 !important;
+    border-left-color: #ff8788 !important;
+  }
+}
+
+.react-tooltip {
+  border-radius: 10px !important;
+  padding: 8px !important;
+  opacity: 0.95 !important;
+}

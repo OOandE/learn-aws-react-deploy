@@ -1,0 +1,58 @@
+.toggle-container {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .toggle-container input[type="radio"] {
+    display: none;
+  }
+  
+  .toggle-label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    color: #fff;
+    transition: color 0.2s;
+  }
+  
+  .toggle-label.active {
+    color: #000
+  }
+  
+  .toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 15px;
+    transition: background-color 0.2s;
+  }
+  
+  .toggle-slider.checked {
+    background-color: #fff;
+  }
+  
+  .toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: var(--white);
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.2s;
+  }
+  
+  .toggle-slider.checked::before {
+    transform: translateX(30px);
+  }

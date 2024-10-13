@@ -1,0 +1,29 @@
+// Colors
+
+.co-primary {
+    color: var(--primary);
+}
+
+.co-gray {
+    color: var(--gray);
+}
+
+.co-gray-60 {
+    color: rgba($color: var(--gray), $alpha: .6);
+}
+
+.co-danger  {
+    color: var(--danger);
+}
+
+.co-success {
+    color: var(--success);
+}
+
+.co-blue {
+    color: var(--f-blue);
+}
+
+.co-black {
+    color: var(--black);
+}

@@ -1,0 +1,134 @@
+.template {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 32px;
+
+  &__item {
+    padding: 20px;
+
+    &-link {
+      &:hover {
+        h5 {
+          color: var(--primary);
+        }
+      }
+    }
+
+    h5 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+  }
+
+  // Responsive design
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+  }
+
+  &__details {
+    width: 100%;
+    max-width: 690px;
+
+    &-card {
+      background-color: var(--white);
+      box-shadow: 0px 0px 10px rgba(0, 11, 20, 0.04);
+      padding: 20px;
+      border-radius: var(--preferredradius);
+      margin-bottom: 20px;
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    &-type {
+      font-size: 16px;
+      color: var(--gray);
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+
+    &-list {
+      position: relative;
+      z-index: 100;
+      &--heading {
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: 500;
+        text-decoration: underline;
+        color: var(--primary-text);
+      }
+
+      &--subheading {
+        font-size: 16px;
+        color: var(--black);
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+    }
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      margin-bottom: 10px;
+
+      &-name {
+        font-size: 16px;
+        color: var(--gray);
+        line-height: 1.5;
+      }
+
+      &-value {
+        font-size: 16px;
+        color: var(--black);
+        line-height: 1.5;
+      }
+    }
+
+    &-subitem {
+      margin-left: 40px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form {
+    &-item {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      &-input {
+        font-size: 16px;
+        color: var(--black);
+        line-height: 1.5;
+        padding: 10px;
+        border: 1px solid var(--gray);
+        border-radius: var(--preferredradius);
+        width: 100%;
+        background: var(--white);
+      }
+    }
+  }
+}
