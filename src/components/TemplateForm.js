@@ -12,18 +12,18 @@ export const TemplateForm = ({ template }) => {
   const handleValue = (key, value) => {
     const newForm = { ...form };
 
-    Object.entries(newForm).map(([tempKey, tempValue]) => {
+    Object.entries(newForm).forEach(([tempKey, tempValue]) => {
       if (key === tempKey) {
         tempValue[key] = value;
       }
       if (isPlainObject(tempValue)) {
-        Object.entries(tempValue).map(([tempKeyKey, tempValueValue]) => {
+        Object.entries(tempValue).forEach(([tempKeyKey, tempValueValue]) => {
           if (key === tempKeyKey) {
             tempValueValue[key] = value;
           }
           if (isPlainArray(tempValueValue)) {
-            tempValueValue.map((value) => {
-              Object.entries(value).map(([subSubKey, subSubValue]) => {
+            tempValueValue.forEach((value) => {
+              Object.entries(value).forEach(([subSubKey, subSubValue]) => {
                 if (key === subSubKey) {
                   subSubValue[key] = value;
                 }

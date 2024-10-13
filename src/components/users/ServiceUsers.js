@@ -9,7 +9,6 @@ import { Loader } from "../Loader.tsx";
 import { UserTableAction } from "../UserTableAction.js";
 // import { MasterDetailModule } from "@ag-grid-enterprise/master-detail";
 import CreateServiceUser from "../modals/CreateServiceUserModal.js";
-import { Link } from "react-router-dom";
 import "ag-grid-charts-enterprise";
 import TableLink from "../TableLink.js";
 // import { ColumnsToolPanelModule } from "@ag-grid-enterprise/column-tool-panel";
@@ -24,7 +23,7 @@ const UserSummary = () => {
 
 export const ServiceUsers = () => {
   const [usersList, setUsers] = useState(null);
-  const [usersColumn, setUsersColumn] = useState([
+  const usersColumn = [
     { field: "id", hide: true },
     {
       headerName: "Action",
@@ -57,14 +56,14 @@ export const ServiceUsers = () => {
     },
     { field: "telephoneNumber", headerName: "Phone number" },
     { field: "emailAddress", headerName: "Email" },
-  ]);
+  ];
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const detailCellRenderer = useCallback(UserSummary, []);
   useEffect(() => {
     setTheme(localStorage.getItem("theme") ?? "");
-  }, [localStorage.getItem("theme")]);
+  }, [theme]);
 
   const getRowId = useCallback((params) => params.data.id, []);
 

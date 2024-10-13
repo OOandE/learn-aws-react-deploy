@@ -12,7 +12,6 @@ export default function SelectField({
   defaultValue,
   isSearchable,
   placeholder = "Select",
-  onChange,
 }) {
   const styles = {
     control: (styles) => ({
@@ -48,10 +47,12 @@ export default function SelectField({
               {...field}
               options={options}
               value={options.find((option) => option.value === field.value)}
+              onChange={(selectedOption) =>
+                field.onChange(selectedOption.value)
+              }
               isSearchable={isSearchable}
               styles={styles}
               placeholder={placeholder}
-              onChange={(selectedOption) => onChange(selectedOption.value)}
             />
           )}
         />

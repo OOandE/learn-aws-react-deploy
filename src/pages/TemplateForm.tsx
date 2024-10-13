@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TemplateForm } from "../components/TemplateForm.jsx";
+import { TemplateForm } from "../components/TemplateForm.js";
 
 export const TemplateFormView = () => {
   const [template, setTemplate] = useState({

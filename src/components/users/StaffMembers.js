@@ -6,9 +6,7 @@ import { format } from "date-fns";
 import { Loader } from "../Loader.tsx";
 import { UserTableAction } from "../UserTableAction.js";
 // import { MasterDetailModule } from "@ag-grid-enterprise/master-detail";
-import CreateServiceUser from "../modals/CreateServiceUserModal.js";
-import CreateTeamUser from "../modals/CreateTeamUserModal.js";
-import { Link } from "react-router-dom";
+import CreateStaff from "../modals/CreateStaffModal.js";
 import TableLink from "../TableLink.js";
 
 // import { ColumnsToolPanelModule } from "@ag-grid-enterprise/column-tool-panel";
@@ -21,9 +19,9 @@ const UserSummary = () => {
   return <div>User summary</div>;
 };
 
-export const TeamUsers = () => {
+export const StaffMembers = () => {
   const [usersList, setUsers] = useState(null);
-  const [usersColumn, setUsersColumn] = useState([
+  const usersColumn = [
     { field: "staffId", hide: true },
     {
       headerName: "Action",
@@ -54,14 +52,14 @@ export const TeamUsers = () => {
     },
     { field: "telephoneNumber", headerName: "Phone number" },
     { field: "emailAddress", headerName: "Email" },
-  ]);
+  ];
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const detailCellRenderer = useCallback(UserSummary, []);
   useEffect(() => {
     setTheme(localStorage.getItem("theme") ?? "");
-  }, [localStorage.getItem("theme")]);
+  }, [theme]);
 
   const getRowId = useCallback((params) => params.data.staffId, []);
 
@@ -105,7 +103,7 @@ export const TeamUsers = () => {
         />
       </div>
       {isModalOpen && (
-        <CreateTeamUser
+        <CreateStaff
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
           reloadUsers={getUsers}

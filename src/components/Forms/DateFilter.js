@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  format,
   subDays,
   subMonths,
   subYears,
@@ -95,6 +94,7 @@ const DateFilter = ({ onFilterChange }) => {
         endDate: new Date(endDate),
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [customRange]);
 
   return (

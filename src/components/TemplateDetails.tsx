@@ -5,7 +5,6 @@ import {
   isPlainObject,
   splitCamelCaseToWords,
 } from "../utils.ts";
-import noTextLogo from "../assets/images/no-text-logo.svg";
 
 export const TemplateDetailsComp = ({ data }) => {
   return (

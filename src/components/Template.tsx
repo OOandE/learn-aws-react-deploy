@@ -6,7 +6,6 @@ import { RiDeleteBin3Line } from "react-icons/ri";
 import { FaRegEdit } from "react-icons/fa";
 import { IoDuplicateOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-import noTextLogo from "../assets/images/no-text-logo.svg";
 
 export const Template = ({ temp, showAction }) => {
   const navigate = useNavigate();

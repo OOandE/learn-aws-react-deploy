@@ -21,7 +21,7 @@ const validationSchema = Yup.object().shape({
   telephoneNumber: Yup.string().required("Phone number is required"),
 });
 
-const CreateTeamUser = ({ isModalOpen, setIsModalOpen, reloadUsers }) => {
+const CreateStaff = ({ isModalOpen, setIsModalOpen, reloadUsers }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   // Initialize React Hook Form with validation schema
@@ -239,4 +239,4 @@ const CreateTeamUser = ({ isModalOpen, setIsModalOpen, reloadUsers }) => {
   );
 };
 
-export default CreateTeamUser;
+export default CreateStaff;

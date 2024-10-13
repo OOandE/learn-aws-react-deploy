@@ -1,7 +1,7 @@
 import React from "react";
 import Tabs from "../components/Tabs.js";
 import { ServiceUsers } from "../components/users/ServiceUsers.js";
-import { TeamUsers } from "../components/users/TeamUsers.js";
+import { StaffMembers } from "../components/users/StaffMembers.js";
 
 export const Users = () => {
   const tabItems = [
@@ -11,7 +11,7 @@ export const Users = () => {
     },
     {
       label: "Staff",
-      content: <TeamUsers />,
+      content: <StaffMembers />,
     },
   ];
   return (
