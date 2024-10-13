@@ -3,7 +3,7 @@ import logo from "../assets/images/careconnect.svg";
 import ToggleButton from "../components/ToggleButton.tsx";
 
 export default function Header({ pageTitle }) {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "");
 
   const toggleTheme = (value: boolean) => {
     const newTheme = value ? "dark" : "light";
@@ -13,12 +13,11 @@ export default function Header({ pageTitle }) {
   };
 
   useEffect(() => {
-    const theme = localStorage.getItem("theme");
     if (theme) {
       setTheme(theme);
       document.documentElement.setAttribute("data-theme", theme);
     }
-  }, []);
+  }, [theme]);
   return (
     <div className="navbar">
       <div className="navbar__logo">

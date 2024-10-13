@@ -6,7 +6,7 @@ export const UserTemplates = () => {
   const navigate = useNavigate();
 
   window.scrollTo(0, 0);
-  const [userTemplates, setUserTemplates] = useState([
+  const [userTemplates] = useState([
     {
       id: 1,
       type: "healthAssessment",

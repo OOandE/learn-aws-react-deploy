@@ -37,8 +37,8 @@ export default function Sidebar() {
       icon: <TbTemplate className="sidebar__icon" />,
     },
     {
-      name: "Rota",
-      path: "/rotas",
+      name: "Shifts",
+      path: "/shifts",
       icon: <GrSchedules className="sidebar__icon" />,
     },
     {

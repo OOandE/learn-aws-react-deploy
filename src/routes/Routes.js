@@ -10,8 +10,8 @@ import { TemplatesDetails } from "../pages/TemplatesDetails.tsx";
 import { UserTemplates } from "../pages/UserTemplates.tsx";
 import { TemplateFormView } from "../pages/TemplateForm.tsx";
 import { Settings } from "../pages/Settings.tsx";
-import { TeamMemberDetails } from "../pages/TeamMemberDetails.tsx";
-import Rotas from "../pages/Rota.js";
+import { StaffDetails } from "../pages/StaffDetails.tsx";
+import Shifts from "../pages/Shifts.js";
 
 const SysRoutes = () => {
   return (
@@ -50,7 +50,7 @@ const SysRoutes = () => {
             path="/team-member/:id"
             element={
               <DashboardLayout pageTitle="Team member">
-                <TeamMemberDetails />
+                <StaffDetails />
               </DashboardLayout>
             }
           />
@@ -83,10 +83,10 @@ const SysRoutes = () => {
           />
           <Route
             exact
-            path="/rotas"
+            path="/shifts"
             element={
-              <DashboardLayout pageTitle="Rotas">
-                <Rotas />
+              <DashboardLayout pageTitle="Shifts">
+                <Shifts />
               </DashboardLayout>
             }
           />

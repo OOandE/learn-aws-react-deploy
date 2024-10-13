@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Cards } from "../components/Cards.tsx";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getStaff } from "../services/users.js";
 import {
   capitalize,
@@ -14,7 +14,7 @@ import { useForm } from "react-hook-form";
 import SelectField from "../components/Forms/SelectField.js";
 import Spinner from "../components/PageLoader.js";
 
-export const TeamMemberDetails: React.FC = () => {
+export const StaffDetails: React.FC = () => {
   const [editContact, setEditContact] = useState(false);
   const [editEmployment, setEditEmployment] = useState(false);
   const [user, setUser] = useState<TeamMemberType | null>(null);
@@ -31,6 +31,7 @@ export const TeamMemberDetails: React.FC = () => {
 
   useEffect(() => {
     fetchUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const {

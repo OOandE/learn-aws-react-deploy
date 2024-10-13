@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Template } from "../components/Template.tsx";
 
 export const Templates = () => {
-  const [templates, setTemplates] = useState([
+  const templates = [
     {
       id: 1,
       type: "healthAssessment",
@@ -13,7 +13,7 @@ export const Templates = () => {
       type: "healthAssessment",
       name: "Client Care Plan",
     },
-  ]);
+  ];
   return (
     <>
       <div className="template">

@@ -1,8 +1,8 @@
 import api from "./api";
 
-export async function getRotas() {
+export async function getShifts() {
   try {
-    const res = await api.get(`rotas`);
+    const res = await api.get(`shifts`);
     return res;
   } catch (err) {
     throw err;

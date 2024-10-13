@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { TemplateForm } from "../components/TemplateForm.js";
 
 export const TemplateFormView = () => {
-  const [template, setTemplate] = useState({
+  const template = {
     id: 1,
     name: "Client Risk Assessment",
     type: "healthAssessment",
@@ -142,7 +142,8 @@ export const TemplateFormView = () => {
         },
       },
     },
-  });
+  };
+  // const [template, setTemplate] = useState();
   return (
     <div className="template__details">
       <TemplateForm template={template.data} />

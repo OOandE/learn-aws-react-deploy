@@ -1,8 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Cards } from "../components/Cards.tsx";
-import { splitCamelCaseToWords } from "../utils.ts";
-import { useParams, useNavigate } from "react-router-dom";
-import noTextLogo from "../assets/images/no-text-logo.svg";
+import { useParams } from "react-router-dom";
 import { getServiceUser } from "../services/users.js";
 import { dateFormat, initials } from "../utils/functions.js";
 import { ServiceUserType } from "../utils/types.ts";
@@ -29,6 +27,7 @@ export const ServiceUserDetails: React.FC = () => {
 
   useEffect(() => {
     fetchUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const {

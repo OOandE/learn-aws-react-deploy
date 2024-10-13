@@ -4,18 +4,16 @@ import { getServiceUsers, getStaffMembers } from "../services/users.js";
 import { AgGridReact } from "ag-grid-react";
 import TableLink from "../components/TableLink.js";
 import { Loader } from "../components/Loader.tsx";
-import { getRotas } from "../services/rotas.js";
+import { getShifts } from "../services/shifts.js";
 import { formatTime } from "../utils/functions.js";
 import { format } from "date-fns";
 import DateFilter from "../components/Forms/DateFilter.js";
 import { BasicSelect } from "../components/Forms/BasicSelect.js";
 
-export default function Rotas() {
+export default function Shifts() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [serviceUser, setServiceUsers] = useState(null);
-  const [staff, setStaff] = useState(null);
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "");
-  const [rotas, setRotas] = useState([
+  const [shifts, setShifts] = useState([
     {
       id: 1,
       serviceUser: {
@@ -40,20 +38,12 @@ export default function Rotas() {
   const [serviceUserOpt, setServiceUserOpt] = useState([]);
   const [selectedStaff, setSelectedStaff] = useState(null);
   const [selectedServiceUser, setSelectedServiceUser] = useState(null);
-  const [rotasColumn, setRotasColumn] = useState([
+  const shiftsColumn = [
     { field: "id", hide: true },
-    // {
-    //   headerName: "Action",
-    //   cellRenderer: UserTableAction,
-    //   // cellRenderer: "agGroupCellRenderer",
-    //   width: 100,
-    //   maxWidth: 100,
-    // },
     {
       headerName: "Service user",
       valueGetter: (p) =>
         `${p.data?.serviceUser?.firstName} ${p.data?.serviceUser?.lastName}`,
-      // cellRenderer: "agGroupCellRenderer",
       cellRenderer: (params) => TableLink(params, "/service-user/"),
     },
     {
@@ -89,7 +79,7 @@ export default function Rotas() {
     {
       field: "serviceType",
     },
-  ]);
+  ];
 
   const [disableFilterApply, setDisableFilterApply] = useState(false);
   const [dateRange, setDateRange] = useState(null);
@@ -110,14 +100,15 @@ export default function Rotas() {
 
   useEffect(() => {
     handleDisableFilterButton();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedStaff, selectedServiceUser, dateRange]);
 
   const getRowId = useCallback((params) => params.data.id, []);
 
-  const fetchRotas = async () => {
+  const fetchShifts = async () => {
     try {
-      // const { data } = await getRotas();
-      // setRotas(data);
+      const { data } = await getShifts();
+      setShifts(data);
     } catch (error) {
       console.error(error);
     }
@@ -130,7 +121,6 @@ export default function Rotas() {
   const fetchServiceUser = async () => {
     try {
       const { data } = await getServiceUsers();
-      setServiceUsers(data);
       if (data) {
         const options = data.map((user) => {
           return {
@@ -148,7 +138,6 @@ export default function Rotas() {
   const fetchStaffMembers = async () => {
     try {
       const { data } = await getStaffMembers();
-      setStaff(data);
       if (data) {
         const options = data.map((user) => {
           return {
@@ -164,7 +153,7 @@ export default function Rotas() {
   };
 
   useEffect(() => {
-    Promise.all([fetchServiceUser(), fetchStaffMembers(), fetchRotas()]);
+    Promise.all([fetchServiceUser(), fetchStaffMembers(), fetchShifts()]);
   }, []);
   const handleDateFilterChange = (range) => {
     if (range) {
@@ -229,8 +218,8 @@ export default function Rotas() {
         style={{ height: 500 }} // the Data Grid will fill the size of the parent container
       >
         <AgGridReact
-          rowData={rotas}
-          columnDefs={rotasColumn}
+          rowData={shifts}
+          columnDefs={shiftsColumn}
           masterDetail={true}
           // detailCellRenderer={detailCellRenderer}
           // detailCellRendererParams={hello}

@@ -1,16 +1,11 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
-import { Cards } from "../components/Cards.tsx";
-import {
-  isPlainObject,
-  splitCamelCaseToWords,
-  isPlainArray,
-} from "../utils.ts";
+import React from "react";
+// import { useParams } from "react-router-dom";
+import { splitCamelCaseToWords } from "../utils.ts";
 import { TemplateDetailsComp } from "../components/TemplateDetails.tsx";
 
 export const TemplatesDetails = () => {
-  const { id } = useParams();
-  const [template, setTemplate] = useState({
+  // const { id } = useParams();
+  const template = {
     id: 1,
     name: "Client Risk Assessment",
     type: "healthAssessment",
@@ -150,7 +145,7 @@ export const TemplatesDetails = () => {
         },
       },
     },
-  });
+  };
   return (
     <div>
       <div className="template__details">
